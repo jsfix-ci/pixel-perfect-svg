@@ -1,11 +1,11 @@
-#!/usr/bin/env node
+port { fileTypeFromBuffer } from 'file-type';
+//#!/usr/bin/env node
 
 import ora from 'ora';
 import { loadPixels } from './imageLoader';
 import { toSvgString } from './imageProcessor';
 import yargs, { Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { fromBuffer } from 'file-type';
 import fs from 'fs';
 import { promisify } from 'util';
 import untildify from 'untildify';
@@ -64,7 +64,7 @@ async function pixelPerfectSvg() {
     const buf = await readFile(args.input);
 
     spinner.start('checking image type');
-    const type = await fromBuffer(buf);
+    const type = await fileTypeFromBuffer(buf);
     const mimeType = type && type.mime;
     if (mimeType == null || ['image/png', 'image/gif', 'image/jpeg'].indexOf(mimeType) === -1) {
       throw new Error(`unsupported input file type ${mimeType || ''}`);

@@ -13,7 +13,13 @@
   },
   "homepage": "https://github.com/kagof/pixel-perfect-svg",
   "readme": "README.md",
-  "keywords": ["svg", "png", "cli", "pixel", "art"],
+  "keywords": [
+    "svg",
+    "png",
+    "cli",
+    "pixel",
+    "art"
+  ],
   "main": "dist/index.js",
   "files": [
     "dist/**/*"
@@ -40,7 +46,7 @@
     "cleanModules": "rm -rf node_modules"
   },
   "dependencies": {
-    "file-type": "^16.5.2",
+    "file-type": "^17.1.3",
     "get-pixels": "^3.3.3",
     "ora": "^5.4.1",
     "untildify": "^4.0.0",
